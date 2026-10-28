@@ -1,0 +1,50 @@
+---
+layout: null
+sitemap: false
+---
+backend:
+  name: github
+  repo: ssnake2580/ssnake2580.github.io
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+  site_domain: {{ site.data.admin.netlify_site_id | jsonify }}
+site_url: https://ssnake2580.github.io
+display_url: https://ssnake2580.github.io
+logo_url: https://ssnake2580.github.io/assets/img/ssnake.svg
+locale: ko
+media_folder: assets/files
+public_folder: /assets/files
+collections:
+  - name: posts
+    label: 블로그 글
+    label_singular: 글
+    folder: _posts
+    create: true
+    delete: true
+    extension: md
+    format: yaml-frontmatter
+    slug: "{% raw %}{{year}}-{{month}}-{{day}}-{{slug}}{% endraw %}"
+    summary: "{% raw %}{{title}}{% endraw %}"
+    sortable_fields: [date, title]
+    fields:
+      - {name: title, label: 제목, widget: string}
+      - name: date
+        label: 작성일
+        widget: datetime
+        date_format: YYYY-MM-DD
+        time_format: false
+        format: YYYY-MM-DD
+      - name: categories
+        label: 카테고리
+        widget: select
+        multiple: true
+        min: 1
+        max: 1
+        options: [개발, CTF/Wargame, Bug Bounty, 블로그/기술문서, 논문/컨퍼런스, 공모전/자격증]
+      - {name: tags, label: 태그, widget: list, required: false}
+      - {name: published, label: 공개하기, widget: boolean, default: true}
+      - name: body
+        label: 본문
+        widget: markdown
+        hint: 이미지는 본문에 삽입하고, PDF·ZIP 등은 파일을 업로드한 뒤 본문에 다운로드 링크를 넣으세요.

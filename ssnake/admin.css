@@ -1,0 +1,8 @@
+body { margin: 0; background: #101214; color: #e8eee5; font-family: system-ui, sans-serif; }
+.login-card { box-sizing: border-box; max-width: 560px; margin: 15vh auto; padding: 2rem; border: 1px solid #384438; border-radius: 16px; background: #191e1c; line-height: 1.8; }
+.login-card[hidden] { display: none; }
+.eyebrow { color: #a6ef73; font: .75rem monospace; letter-spacing: .13em; }
+h1 { letter-spacing: -.04em; }
+#admin-detail { color: #afbcaf; overflow-wrap: anywhere; }
+a { color: #a6ef73; }
+@media (max-width: 600px) { .login-card { margin: 12vh 1rem; padding: 1.5rem; } }

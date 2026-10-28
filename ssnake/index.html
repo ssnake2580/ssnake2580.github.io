@@ -1,0 +1,29 @@
+---
+layout: null
+permalink: /ssnake/
+sitemap: false
+---
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="same-origin">
+  <title>ssnake · 블로그 관리</title>
+  <link rel="icon" href="{{ '/assets/img/ssnake.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/ssnake/admin.css' | relative_url }}">
+  <script id="admin-settings" type="application/json">{{ site.data.admin | jsonify }}</script>
+  <script src="{{ '/ssnake/admin.js' | relative_url }}" defer></script>
+</head>
+<body>
+  <main id="admin-status" class="login-card" role="status" aria-live="polite">
+    <p class="eyebrow">SSNAKE / PRIVATE WORKSPACE</p>
+    <h1>블로그 관리</h1>
+    <p id="admin-message">관리 화면을 불러오는 중입니다.</p>
+    <p id="admin-detail">GitHub 계정으로 로그인한 뒤 글과 파일을 관리합니다.</p>
+    <a href="{{ '/' | relative_url }}">블로그로 돌아가기</a>
+  </main>
+  <noscript>관리 화면을 이용하려면 JavaScript를 활성화하세요.</noscript>
+</body>
+</html>
