@@ -1,0 +1,5 @@
+<div class="knights-grid">
+{% for category in site.data.knights_categories %}
+{% assign records = site.posts | where_exp: "post", "post.categories contains category.name" %}
+<a class="knights-category" href="{{ '/notes/' | append: category.slug | append: '/' | relative_url }}"><span class="knights-number">{{ category.number }} /</span><h3>{{ category.name }}</h3><p>{{ category.description }}</p><span class="knights-count">{{ records.size }}개의 기록 <span aria-hidden="true">↗</span></span></a>
+{% endfor %}</div>

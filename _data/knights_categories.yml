@@ -1,0 +1,24 @@
+- slug: development
+  name: 개발
+  number: '01'
+  description: 코드로 이해하고, 직접 만들며 배우는 과정.
+- slug: ctf-wargame
+  name: CTF/Wargame
+  number: '02'
+  description: 문제를 풀며 쌓아가는 분석 과정과 풀이 기록.
+- slug: bug-bounty
+  name: Bug Bounty
+  number: '03'
+  description: 웹 취약점 학습과 보안 연구 기록.
+- slug: technical-writing
+  name: 블로그/기술문서
+  number: '04'
+  description: 읽고 정리한 기술 자료와 나누고 싶은 지식.
+- slug: research
+  name: 논문/컨퍼런스
+  number: '05'
+  description: 논문과 발표에서 발견한 아이디어와 배움.
+- slug: achievements
+  name: 공모전/자격증
+  number: '06'
+  description: 도전의 준비 과정과 활동 기록.
