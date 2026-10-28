@@ -13,6 +13,7 @@
   const script = document.createElement('script');
   script.src = 'https://unpkg.com/decap-cms@3.17.3/dist/decap-cms.js';
   script.onload = () => {
+    window.CMS.registerPreviewStyle('/ssnake/preview.css');
     window.CMS.init();
     status.hidden = true;
   };

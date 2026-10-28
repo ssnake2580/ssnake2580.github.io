@@ -1,8 +1,69 @@
-body { margin: 0; background: #101214; color: #e8eee5; font-family: system-ui, sans-serif; }
-.login-card { box-sizing: border-box; max-width: 560px; margin: 15vh auto; padding: 2rem; border: 1px solid #384438; border-radius: 16px; background: #191e1c; line-height: 1.8; }
+/* Shared palette with the public knights blog. */
+:root {
+  color-scheme: dark;
+  --knights-bg: #101214;
+  --knights-panel: #191e1c;
+  --knights-border: #384438;
+  --knights-text: #e8eee5;
+  --knights-muted: #afbcaf;
+  --knights-accent: #a6ef73;
+}
+html body {
+  margin: 0;
+  background: var(--knights-bg);
+  color: var(--knights-text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.login-card {
+  box-sizing: border-box;
+  max-width: 560px;
+  margin: 15vh auto;
+  padding: 2.5rem;
+  border: 1px solid var(--knights-border);
+  border-radius: 16px;
+  background: var(--knights-panel);
+  line-height: 1.8;
+}
 .login-card[hidden] { display: none; }
-.eyebrow { color: #a6ef73; font: .75rem monospace; letter-spacing: .13em; }
-h1 { letter-spacing: -.04em; }
-#admin-detail { color: #afbcaf; overflow-wrap: anywhere; }
-a { color: #a6ef73; }
-@media (max-width: 600px) { .login-card { margin: 12vh 1rem; padding: 1.5rem; } }
+.eyebrow { color: var(--knights-accent); font: .75rem ui-monospace, monospace; letter-spacing: .13em; }
+html body h1 { letter-spacing: -.04em; }
+#admin-detail { color: var(--knights-muted); overflow-wrap: anywhere; }
+html body a { color: var(--knights-accent); }
+html body :is(input, textarea, [contenteditable="true"]) { caret-color: var(--knights-accent); }
+html body :is(input, textarea)::placeholder { color: #879789; opacity: 1; }
+html body :is(button, a, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--knights-accent);
+  outline-offset: 3px;
+}
+html body ::selection { background: #395232; color: #edf5e8; }
+html body [class*="-AppHeader"] { border-color: var(--knights-border); }
+html body [class*="-AppHeaderButton"],
+html body [class*="-AppHeaderLink"] { border-radius: 8px; }
+html body [class*="-TextControl"],
+html body [class*="-DateTimeControl"],
+html body textarea { border-radius: 8px; }
+html body button:disabled { opacity: .5; cursor: not-allowed; }
+html body img[alt="Logo"] { width: 112px; height: 112px; border-radius: 24px; }
+/* The stock login is a full-height section; keep its existing controls and flow. */
+html body section:has(> span img[alt="Logo"]) {
+  gap: 26px;
+  background: radial-gradient(ellipse at 50% 40%, #1b271c 0, #101214 65%);
+}
+html body section:has(> span img[alt="Logo"]) > span:first-child { margin-bottom: 0; }
+html body section:has(> span img[alt="Logo"]) > span:first-child::after {
+  content: "ssnake의 knights";
+  display: block;
+  margin-top: 24px;
+  color: var(--knights-text);
+  font-size: 26px;
+  font-weight: 750;
+  letter-spacing: -.05em;
+}
+html body section:has(> span img[alt="Logo"]) > button {
+  min-height: 44px;
+  border: 1px solid #577344;
+  border-radius: 8px;
+}
+@media (max-width: 600px) {
+  .login-card { margin: 12vh 1rem; padding: 1.5rem; }
+}
