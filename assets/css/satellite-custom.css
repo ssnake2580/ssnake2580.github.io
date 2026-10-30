@@ -80,11 +80,13 @@ main .knights-category .knights-number { font-size: .7rem; }
 }
 
 /* Keep the color switch in the viewport on desktop and mobile. */
-.floating-theme-toggle {
+#theme-switch.floating-theme-toggle {
   position: fixed;
   right: calc(1.25rem + env(safe-area-inset-right, 0px));
   bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
-  z-index: 20;
+  z-index: 1000;
+  visibility: visible;
+  opacity: 1;
   display: grid;
   place-items: center;
   width: 3rem;

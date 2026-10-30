@@ -6,8 +6,8 @@
 {% if page.robots %}<meta name="robots" content="{{ page.robots | escape }}">{% endif %}
 <link rel="icon" type="image/svg+xml" href="{{ site.avatar | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/satellite.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/satellite-custom.css' | relative_url }}">
-<script defer src="{{ '/assets/js/satellite.js' | relative_url }}"></script>
+<link rel="stylesheet" href="{{ '/assets/css/satellite-custom.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<script defer src="{{ '/assets/js/satellite.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 </head>
 <body>
 <script>try { if ((localStorage.getItem('satellite-theme') || '{{ site.theme_mode }}') === 'dark') document.body.classList.add('dark-theme'); } catch (e) { document.body.classList.add('dark-theme'); }</script>
@@ -29,7 +29,7 @@
 </ul></nav>
 <div id="contact"><hr><p>{{ site.tagline }}</p><a href="https://github.com/{{ site.github.username }}">GitHub</a> · <a href="mailto:{{ site.social.email }}">Email</a></div>
 </div></aside>
-<button type="button" class="theme-toggle floating-theme-toggle" aria-label="색상 테마 전환">◐</button>
+<button type="button" id="theme-switch" class="theme-toggle floating-theme-toggle" aria-label="색상 테마 전환">◐</button>
 <div id="post"><div class="inner-header" aria-hidden="true"><span class="dot" style="background:#f86158"></span><span class="dot" style="background:#fbbf2d"></span><span class="dot" style="background:#2acb45"></span></div><div class="inner-content"><main id="main-content" tabindex="-1">{{ content }}</main></div></div>
 <footer class="site-footer">© {{ 'now' | date: '%Y' }} {{ site.social.name }} · <a href="https://github.com/byanko55/jekyll-theme-satellite">Satellite</a></footer>
 </body></html>
