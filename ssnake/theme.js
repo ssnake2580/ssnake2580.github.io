@@ -5,16 +5,16 @@
 (() => {
   'use strict';
   const palette = {
-    '#fff': '#191e1c', '#ffffff': '#191e1c',
-    '#eff0f4': '#101214', '#798291': '#afbcaf', '#313d3e': '#e8eee5',
-    '#3a69c7': '#a6ef73', '#e8f5fe': '#263a22', '#005614': '#c2f3a5',
-    '#caef6f': '#2a4023', '#754e00': '#f1d18e', '#ffee9c': '#3b3320',
+    '#fff': '#313132', '#ffffff': '#313132',
+    '#eff0f4': '#1e1e1f', '#798291': '#aaaaaa', '#313d3e': '#cccccc',
+    '#3a69c7': '#64c8c8', '#e8f5fe': '#293e40', '#005614': '#8cdddd',
+    '#caef6f': '#293e40', '#754e00': '#f1d18e', '#ffee9c': '#3b3320',
     '#ff003b': '#ff8b9e', '#d60032': '#ff8b9e', '#fcefea': '#3a242a',
-    '#70399f': '#d1b0f2', '#f6d8ff': '#33273e', '#17a2b8': '#a6ef73',
-    '#117888': '#c2f3a5', '#ddf5f9': '#263a22', '#dfdfe3': '#384438',
-    '#5d626f': '#afbcaf', '#f2f2f2': '#202720', '#e6e6e6': '#2b352a',
-    '#aae31f': '#a6ef73', '#555a65': '#384b32', '#eaebf1': '#384438',
-    '#fbe0d7': '#3a242a', '#1195aa': '#a6ef73', '#c4c6d2': '#879789',
+    '#70399f': '#d1b0f2', '#f6d8ff': '#33273e', '#17a2b8': '#64c8c8',
+    '#117888': '#8cdddd', '#ddf5f9': '#293e40', '#dfdfe3': '#484848',
+    '#5d626f': '#aaaaaa', '#f2f2f2': '#383839', '#e6e6e6': '#414142',
+    '#aae31f': '#64c8c8', '#555a65': '#365858', '#eaebf1': '#484848',
+    '#fbe0d7': '#3a242a', '#1195aa': '#64c8c8', '#c4c6d2': '#909090',
   };
   const properties = /^(color|background-color|border(?:-(?:top|right|bottom|left))?(?:-color)?|outline(?:-color)?|fill|stroke)$/;
   function recolor(value, property) {
@@ -27,8 +27,8 @@
         if (!channels || channels.length !== 3) return token;
         key = '#' + channels.map(n => Number(n).toString(16).padStart(2, '0')).join('');
       }
-      if ((key === '#fff' || key === '#ffffff') && /^(color|fill|stroke)$/.test(property)) return '#e8eee5';
-      if (property === 'background-color' && ['#313d3e', '#3a69c7', '#17a2b8', '#aae31f'].includes(key)) return '#304b27';
+      if ((key === '#fff' || key === '#ffffff') && /^(color|fill|stroke)$/.test(property)) return '#cccccc';
+      if (property === 'background-color' && ['#313d3e', '#3a69c7', '#17a2b8', '#aae31f'].includes(key)) return '#365858';
       return palette[key] || token;
     });
   }

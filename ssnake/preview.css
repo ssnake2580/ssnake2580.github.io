@@ -3,22 +3,40 @@
 body {
   margin: 0;
   padding: 32px;
-  background: #101214;
-  color: #cbd3c9;
+  background: #1e1e1f;
+  color: #aaaaaa;
   font: 16px/1.85 system-ui, -apple-system, "Segoe UI", sans-serif;
   overflow-wrap: anywhere;
 }
-h1, h2, h3, h4, h5, h6 { color: #edf0eb; line-height: 1.4; letter-spacing: -.035em; }
+h1, h2, h3, h4, h5, h6 { color: #cccccc; line-height: 1.4; letter-spacing: -.035em; }
 h1 { font-size: 2rem; }
-h2 { margin-top: 2rem; padding-bottom: .6rem; border-bottom: 1px solid #384438; }
-a { color: #a6ef73; }
-blockquote { margin-left: 0; padding: .6rem 1.2rem; border-left: 3px solid #a6ef73; background: #191e1c; color: #afbcaf; }
-pre { padding: 1.2rem; background: #191e1c; border: 1px solid #384438; border-radius: 8px; overflow-x: auto; }
+h2 { margin-top: 2rem; padding-bottom: .6rem; border-bottom: 1px solid #484848; }
+a { color: #64c8c8; }
+blockquote { margin-left: 0; padding: .6rem 1.2rem; border-left: 3px solid #64c8c8; background: #313132; color: #aaaaaa; }
+pre { padding: 1.2rem; background: #313132; border: 1px solid #484848; border-radius: 8px; overflow-x: auto; }
 code { font-family: ui-monospace, monospace; font-size: .9em; }
-:not(pre) > code { padding: .15rem .4rem; background: #20291f; color: #c5e9ab; border-radius: 4px; }
+:not(pre) > code { padding: .15rem .4rem; background: #313132; color: #64c8c8; border-radius: 4px; }
 img { max-width: 100%; height: auto; border-radius: 8px; }
 table { border-collapse: collapse; width: 100%; }
-th, td { padding: .65rem; border: 1px solid #384438; text-align: left; }
-th { background: #191e1c; color: #edf0eb; }
-hr { border: 0; border-top: 1px solid #384438; margin: 2rem 0; }
+th, td { padding: .65rem; border: 1px solid #484848; text-align: left; }
+th { background: #313132; color: #cccccc; }
+hr { border: 0; border-top: 1px solid #484848; margin: 2rem 0; }
 @media (max-width: 500px) { body { padding: 20px; } }
+
+/* Match the Satellite article surface and scale. */
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('../assets/fonts/NunitoSans-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+body {
+  background: #313132;
+  font-family: 'Nunito Sans', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+h1 { font-size: 1.65rem; }
+h2 { font-size: 1.3rem; }
+h3 { font-size: 1.1rem; }
+blockquote { border-left-color: #64c8c8; background: #29292a; }
+pre, :not(pre) > code, th { background: #29292a; }

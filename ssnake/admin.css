@@ -1,12 +1,12 @@
-/* Shared palette with the public knights blog. */
+/* Satellite palette shared with the public blog. */
 :root {
   color-scheme: dark;
-  --knights-bg: #101214;
-  --knights-panel: #191e1c;
-  --knights-border: #384438;
-  --knights-text: #e8eee5;
-  --knights-muted: #afbcaf;
-  --knights-accent: #a6ef73;
+  --knights-bg: #1e1e1f;
+  --knights-panel: #313132;
+  --knights-border: #484848;
+  --knights-text: #cccccc;
+  --knights-muted: #aaaaaa;
+  --knights-accent: #64c8c8;
 }
 html body {
   margin: 0;
@@ -30,12 +30,12 @@ html body h1 { letter-spacing: -.04em; }
 #admin-detail { color: var(--knights-muted); overflow-wrap: anywhere; }
 html body a { color: var(--knights-accent); }
 html body :is(input, textarea, [contenteditable="true"]) { caret-color: var(--knights-accent); }
-html body :is(input, textarea)::placeholder { color: #879789; opacity: 1; }
+html body :is(input, textarea)::placeholder { color: #909090; opacity: 1; }
 html body :is(button, a, input, textarea, select, [tabindex]):focus-visible {
   outline: 2px solid var(--knights-accent);
   outline-offset: 3px;
 }
-html body ::selection { background: #395232; color: #edf5e8; }
+html body ::selection { background: #365858; color: #eeeeee; }
 html body [class*="-AppHeader"] { border-color: var(--knights-border); }
 html body [class*="-AppHeaderButton"],
 html body [class*="-AppHeaderLink"] { border-radius: 8px; }
@@ -47,7 +47,7 @@ html body img[alt="Logo"] { width: 112px; height: 112px; border-radius: 24px; }
 /* The stock login is a full-height section; keep its existing controls and flow. */
 html body section:has(> span img[alt="Logo"]) {
   gap: 26px;
-  background: radial-gradient(ellipse at 50% 40%, #1b271c 0, #101214 65%);
+  background: radial-gradient(ellipse at 50% 40%, #313132 0, #1e1e1f 65%);
 }
 html body section:has(> span img[alt="Logo"]) > span:first-child { margin-bottom: 0; }
 html body section:has(> span img[alt="Logo"]) > span:first-child::after {
@@ -61,9 +61,66 @@ html body section:has(> span img[alt="Logo"]) > span:first-child::after {
 }
 html body section:has(> span img[alt="Logo"]) > button {
   min-height: 44px;
-  border: 1px solid #577344;
+  border: 1px solid #64c8c8;
   border-radius: 8px;
 }
 @media (max-width: 600px) {
   .login-card { margin: 12vh 1rem; padding: 1.5rem; }
+}
+
+/* Satellite's window frame, compact typography and rounded controls. */
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('../assets/fonts/NunitoSans-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+html body { font-family: 'Nunito Sans', system-ui, sans-serif; font-size: 14px; }
+.login-card {
+  position: relative;
+  max-width: 600px;
+  margin: 12vh auto;
+  padding: 4.5rem 2rem 2rem;
+  border-radius: 16px;
+  background: #313132;
+  box-shadow: 0 16px 24px #0002;
+}
+.login-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 36px;
+  border-radius: 15px 15px 0 0;
+  border-bottom: 1px solid #484848;
+  background:
+    radial-gradient(circle at 24px 18px, #f86158 0 5px, transparent 6px),
+    radial-gradient(circle at 44px 18px, #fbbf2d 0 5px, transparent 6px),
+    radial-gradient(circle at 64px 18px, #2acb45 0 5px, transparent 6px),
+    linear-gradient(#3a3a3b, #29292a);
+}
+html body h1 { font-size: 1.65rem; line-height: 1.5; }
+html body [class*='-AppHeader'] { background-color: #313132; }
+html body [class*='-Sidebar'] { background-color: #1e1e1f; }
+html body [class*='-AppHeaderButton'],
+html body [class*='-AppHeaderLink'] { font-size: .8rem; }
+html body [class*='-SidebarNavLink'] { font-size: .8rem; white-space: nowrap; }
+html body [class*='-Card'] { border-radius: 10px; border-color: #484848; }
+html body :is(input, textarea, select) { font-size: .875rem; }
+html body img[alt='Logo'] { width: 96px; height: 96px; border-radius: 50%; }
+html body section:has(> span img[alt='Logo']) {
+  gap: 20px;
+  background: radial-gradient(ellipse at 50% 40%, #313132 0, #1e1e1f 65%);
+}
+html body section:has(> span img[alt='Logo']) > span:first-child::after {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -.025em;
+}
+html body section:has(> span img[alt='Logo']) > button {
+  border-color: #64c8c8;
+  font-size: .875rem;
+  background-color: #365858;
+  color: #eeeeee;
+}
+@media (max-width: 600px) {
+  .login-card { margin: 10vh 1rem; padding: 4rem 1.4rem 1.4rem; }
 }
