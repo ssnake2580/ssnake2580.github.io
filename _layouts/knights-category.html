@@ -1,9 +1,8 @@
 ---
 layout: page
 ---
-<h1>{{ page.title }}</h1>
 <p class="knights-eyebrow">LEARNING JOURNAL / {{ page.label }}</p>
 <p>{{ page.description }}</p>
 {% assign records = site.posts | where_exp: "post", "post.categories contains page.category_name" %}
-{% if records.size > 0 %}<ul class="knights-posts">{% for post in records %}<li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>{% endfor %}</ul>{% else %}<div class="knights-empty">아직 이 카테고리에 작성된 기록이 없습니다.</div>{% endif %}
+{% include satellite-post-list.html records=records %}
 <p><a href="{{ '/categories/' | relative_url }}">← 전체 카테고리</a></p>

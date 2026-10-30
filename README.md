@@ -1,7 +1,7 @@
 # ssnake의 knights
 
 포렌식과 웹에 관심을 둔 ssnake의 학습·활동 기록 블로그입니다.
-Jekyll과 Chirpy 테마를 사용하며 GitHub Pages로 배포합니다.
+Jekyll과 Satellite 테마를 사용하며 GitHub Pages로 배포합니다.
 
 ## GitHub Pages란?
 
@@ -120,7 +120,9 @@ Front matter 아래에 Markdown으로 학습 내용, 시도한 방법, 결과와
 - `_config.yml`: 제목, 자기소개 요약, GitHub, 이메일, 기본 테마
 - `_tabs/about.md`: 자기소개
 - `_data/knights_categories.yml`: 카테고리 설명
-- `assets/css/knights.css`: 맞춤 디자인
+- `assets/css/satellite-custom.css`: 맞춤 디자인
+- `_sass/`, `assets/css/satellite.scss`: Satellite 원본 스타일
 - `assets/img/ssnake.svg`: 직접 만든 뱀 심볼
 
-테마: [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy), MIT 라이선스.
+테마: [Satellite](https://github.com/byanko55/jekyll-theme-satellite), MIT 라이선스.
+원본 커밋: `86a754ab7fac583f98b6f103241b5a5a341b6442`. 스타일·폰트·배경 스크립트를 로컬에 포함하고 기존 글 구조에 맞게 레이아웃을 적용했습니다. 라이선스는 `assets/satellite-LICENSE.txt`에 보존합니다.

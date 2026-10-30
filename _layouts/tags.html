@@ -1,0 +1,4 @@
+---
+layout: page
+---
+{% assign tags = site.tags | sort %}{% for tag in tags %}<section id="{{ tag[0] | slugify }}"><h2># {{ tag[0] | escape }}</h2>{% assign tagged_posts = tag[1] %}{% include satellite-post-list.html records=tagged_posts %}</section>{% endfor %}

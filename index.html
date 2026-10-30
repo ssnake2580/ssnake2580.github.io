@@ -1,14 +1,7 @@
 ---
-layout: knights-home
-title: ""
+layout: default
+title: 홈
 ---
-<section class="knights-hero" aria-labelledby="hero-title">
-<p class="knights-eyebrow">SSNAKE / LEARNING JOURNAL</p>
-<h1 id="hero-title">흔적을 읽고,<br>웹을 탐구하다<span>.</span></h1>
-<p class="knights-intro">포렌식과 웹에 관심을 둔 <strong>ssnake</strong>의 기록 공간입니다.<br>배운 것과 시도한 과정을 하나씩 쌓아갑니다.</p>
-<div class="knights-actions"><a href="#learning">학습 기록 살펴보기 <span aria-hidden="true">↓</span></a><a href="{{ '/about/' | relative_url }}">ssnake 소개 <span aria-hidden="true">↗</span></a></div>
-<div class="knights-terminal" aria-hidden="true"><span>ssnake@knights:~$</span> follow the evidence<span class="knights-cursor">_</span></div>
-</section>
-<section id="learning" class="knights-section"><p class="knights-eyebrow">THE KNOWLEDGE BASE</p><h2>여섯 갈래의 기록</h2>{% include knights-categories.html %}</section>
-<section class="knights-section"><p class="knights-eyebrow">LATEST ENTRIES</p><h2>최근 기록</h2>
-{% if site.posts.size > 0 %}<ul class="knights-posts">{% for post in site.posts limit:5 %}<li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>{% endfor %}</ul>{% else %}<div class="knights-empty">아직 작성된 기록이 없습니다. 앞으로의 배움이 이곳에 쌓입니다.</div>{% endif %}</section>
+<header class="page-heading"><p class="eyebrow">SSNAKE / LEARNING JOURNAL</p><h1>흔적을 읽고, 웹을 탐구하다.</h1><p>포렌식과 웹에 관심을 둔 ssnake의 기록 공간입니다.<br>배운 것과 시도한 과정을 하나씩 쌓아갑니다.</p></header>
+<section><h2>최근 기록 <span class="total-count">{{ site.posts.size }}</span></h2>{% include satellite-post-list.html records=site.posts %}</section>
+<section class="category-section"><h2>여섯 갈래의 기록</h2>{% include knights-categories.html %}</section>

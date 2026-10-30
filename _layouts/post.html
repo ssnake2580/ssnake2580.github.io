@@ -1,0 +1,4 @@
+---
+layout: default
+---
+<article><header class="page-heading"><p class="eyebrow">{{ page.categories | join: ' / ' | escape }}</p><h1>{{ page.title | escape }}</h1><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time></header><div class="post-body">{{ content }}</div><div class="tag-box">{% for tag in page.tags %}<a class="tag" href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag | escape }}</a>{% endfor %}</div><p><a href="{{ '/archives/' | relative_url }}">← 전체 기록</a></p></article>

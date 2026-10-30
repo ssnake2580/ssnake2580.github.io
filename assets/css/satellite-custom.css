@@ -1,0 +1,80 @@
+@font-face{font-family:'Nunito Sans';src:url('../fonts/NunitoSans-Regular.woff2') format('woff2');font-display:swap}@font-face{font-family:Lato;src:url('../fonts/Lato-Regular.woff2') format('woff2');font-display:swap}@font-face{font-family:Righteous;src:url('../fonts/Righteous-Regular.woff2') format('woff2');font-display:swap}
+*{box-sizing:border-box}body{line-height:1.8}a,p,span,li{font-family:'Nunito Sans',Arial,sans-serif}h1,h2,h3{font-family:Lato,Arial,sans-serif}a:focus-visible,button:focus-visible{outline:3px solid #64c8c8;outline-offset:4px}button{cursor:pointer}main{padding:2rem;overflow-wrap:anywhere}main h1{font-size:2rem;line-height:1.4}main h2{margin:2rem 0 1rem;font-size:1.35rem}main h3{font-size:1.1rem}main p{margin:1rem 0}main a:hover{color:#fa4251}main pre{overflow:auto;padding:1rem;background:#f1ebe5;border-radius:8px}main code{font-family:monospace}main table{display:block;max-width:100%;overflow:auto}main td,main th{padding:.5rem;border-bottom:1px solid #aaa}main blockquote{border-left:3px solid #64c8c8;margin-left:0;padding-left:1rem}main img{height:auto}.page-heading{padding-bottom:1.5rem;border-bottom:1px solid #ddd;margin-bottom:2rem}.eyebrow,.knights-eyebrow{font-size:.75rem;letter-spacing:2px;color:#b04008}.page-heading time,.entry-list time{font-size:.8rem;color:#888}.entry-list{list-style:none;padding:0}.entry-list li{border-bottom:1px dashed #ccc}.entry-list li>a{display:block;padding:1.4rem .5rem}.entry-list h3{margin:0}.entry-list p{font-size:.9rem;color:#777}.entry-category{font-size:.75rem;margin-left:1rem;color:#b04008}.total-count{font-size:.8rem;color:#888}.knights-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.knights-category{padding:1.2rem;border:1px solid #ddd;border-radius:8px;transition:border-color .2s}.knights-category:hover{border-color:#64c8c8}.knights-category h3{margin:.5rem 0}.knights-category p{font-size:.85rem}.knights-number,.knights-count{font-size:.75rem;color:#888}.site-footer{padding:1.5rem;text-align:center;font-size:.75rem;color:#888}.sidebar-left{overflow-y:auto;max-height:100vh}.site-avatar{display:block;padding-top:2.5rem}.site-avatar img{outline:none;background:#f1ebe5}.nav-list{padding-left:1rem!important}.nav-item a{padding:.45rem .7rem;width:100%;border-radius:6px}.nav-item a[aria-current=page]{background:#ddd}.nav-item b{color:#b04008}#contact p{font-size:.8rem}.theme-toggle{font-size:1.5rem}.mobile-tools{display:flex;position:absolute;right:1rem;top:.5rem;gap:1rem}.mobile-tools button{font-size:1.4rem;position:static;background:none}.skip-link{position:fixed;left:1rem;top:-6rem;z-index:10;background:#fff;padding:1rem}.skip-link:focus{top:1rem}body.dark-theme main{color:#aaa}body.dark-theme main pre{background:#313132}body.dark-theme .knights-category,body.dark-theme .page-heading{border-color:#484848}body.dark-theme .nav-item a[aria-current=page]{background:#464647}body.dark-theme .mobile-tools button{color:#64c8c8}
+@media(max-width:1024px){#navigation{display:none}#navigation.menu-open{display:block}.site-tab{padding-right:6rem}.side-info #contact{display:none}main{padding:1.4rem}.site-avatar{padding:0}.sidebar-left{max-height:none;overflow:visible}.side-banner{position:relative}.knights-grid{grid-template-columns:1fr}.site-footer{margin:0}}
+@media(min-width:1025px){.mobile-tools{display:none}#navigation{display:block}#post{min-height:70vh}.site-footer{margin-left:18rem}.sidebar-left{padding-bottom:2rem}main{padding:2.5rem}#navigation{max-height:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}#stars{display:none}}
+
+/* Keep category cards aligned despite the theme's `main * { margin: auto }`. */
+main .knights-grid {
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+  justify-items: stretch;
+}
+main .knights-category {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  min-height: 13rem;
+  height: 100%;
+  margin: 0;
+  padding: 1.2rem;
+}
+main .knights-category > * {
+  margin: 0;
+  width: 100%;
+}
+main .knights-category h3 {
+  margin: .65rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+main .knights-category p {
+  margin: 0 0 1rem;
+  font-size: .8rem;
+  line-height: 1.7;
+  text-align: left;
+}
+main .knights-category .knights-count {
+  margin-top: auto;
+  font-size: .7rem;
+}
+main .knights-category .knights-number { font-size: .7rem; }
+
+/* Smaller sidebar labels and matching icon backgrounds. */
+#navigation .nav-list li { font-size: .875rem; }
+#navigation .nav-item { padding: .35rem 0; }
+#navigation .nav-list-link {
+  min-height: 2rem;
+  padding: .35rem .6rem;
+  line-height: 1.6;
+}
+#navigation .nav-lh::before {
+  width: 2rem;
+  height: 2rem;
+}
+#navigation .nav-lh:hover::before { width: 100%; }
+
+/* Fit every sidebar entry on a single line. */
+#navigation .nav-list {
+  padding-left: 0 !important;
+}
+#navigation .nav-list li {
+  font-size: .75rem;
+}
+#navigation .nav-list-link {
+  width: 100%;
+  min-width: 0;
+  padding: .35rem .4rem;
+}
+#navigation .nav-list-link span {
+  white-space: nowrap;
+  font-size: inherit;
+  letter-spacing: 0;
+}
+@media (min-width: 1025px) {
+  #navigation {
+    padding-right: .75rem;
+    padding-left: .75rem;
+  }
+}
