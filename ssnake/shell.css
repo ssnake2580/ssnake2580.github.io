@@ -1,0 +1,15 @@
+/* Keep the public Satellite frame around the isolated CMS application. */
+main .admin-intro { margin: 0; padding: 1.5rem 0 2rem; border-bottom: 1px solid #484848; }
+main .admin-intro .eyebrow { margin: 0 0 2.5rem; color: #aaa; }
+main .admin-intro h1 { margin: 0 0 1rem; font-size: clamp(1.4rem, 2.5vw, 2rem); }
+main .admin-intro p { font-size: .9rem; text-align: left; }
+main .admin-editor { margin: 0; }
+main .admin-editor-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem; margin: 1.5rem 0; }
+main .admin-editor-heading h2 { margin: 0; font-size: 1.15rem; }
+main .admin-editor-heading span { margin: 0; font-size: .7rem; color: #999; }
+main .admin-workspace { display: block; width: 100%; height: 76vh; min-height: 600px; margin: 0; border: 1px solid #484848; border-radius: 10px; background: #1e1e1f; }
+@media(max-width: 768px) {
+  main .admin-workspace { min-height: 640px; height: 85vh; }
+  main .admin-intro { padding-top: .5rem; }
+  main .admin-intro .eyebrow { margin-bottom: 1.5rem; }
+}

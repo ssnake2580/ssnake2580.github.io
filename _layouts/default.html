@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 {% seo %}{% feed_meta %}
+{% if page.robots %}<meta name="robots" content="{{ page.robots | escape }}">{% endif %}
 <link rel="icon" type="image/svg+xml" href="{{ site.avatar | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/satellite.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/satellite-custom.css' | relative_url }}">

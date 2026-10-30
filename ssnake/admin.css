@@ -124,3 +124,21 @@ html body section:has(> span img[alt='Logo']) > button {
 @media (max-width: 600px) {
   .login-card { margin: 10vh 1rem; padding: 4rem 1.4rem 1.4rem; }
 }
+
+/* The CMS lives inside the Satellite window on /ssnake/. */
+html body.embedded-workspace .login-card {
+  max-width: 500px;
+  margin: 8vh auto;
+  padding: 2rem;
+  box-shadow: none;
+  border: 0;
+  background: transparent;
+}
+html body.embedded-workspace .login-card::before { display: none; }
+html body.embedded-workspace section:has(> span img[alt='Logo']) {
+  min-height: 100vh;
+  background: #313132;
+}
+@media(max-width: 600px) {
+  html body.embedded-workspace .login-card { margin: 5vh 1rem; padding: 1rem; }
+}
