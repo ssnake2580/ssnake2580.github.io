@@ -78,3 +78,24 @@ main .knights-category .knights-number { font-size: .7rem; }
     padding-left: .75rem;
   }
 }
+
+/* Keep the color switch in the viewport on desktop and mobile. */
+.floating-theme-toggle {
+  position: fixed;
+  right: calc(1.25rem + env(safe-area-inset-right, 0px));
+  bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 1px solid #d5bb61;
+  border-radius: 50%;
+  background: #ffe390;
+  color: #1e1e1f;
+  font-size: 1.65rem;
+  line-height: 1;
+  box-shadow: 0 3px 12px #0003;
+}
+.floating-theme-toggle:hover { background: #ffd044; }

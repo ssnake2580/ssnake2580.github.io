@@ -17,7 +17,7 @@
 <div class="side-banner">
 <a class="site-avatar" href="{{ '/' | relative_url }}"><img src="{{ site.avatar | relative_url }}" alt="ssnake 홈" width="144" height="144"></a>
 <div class="site-tab"><a class="site-name" href="{{ '/' | relative_url }}"><mark>{{ site.title }}</mark></a></div>
-<div class="mobile-tools"><button type="button" class="theme-toggle" aria-label="색상 테마 전환">◐</button><button type="button" id="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navigation">☰</button></div>
+<div class="mobile-tools"><button type="button" id="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navigation">☰</button></div>
 </div>
 <div class="side-info">
 <nav id="navigation" aria-label="주 메뉴"><ul class="nav-list">
@@ -29,7 +29,7 @@
 </ul></nav>
 <div id="contact"><hr><p>{{ site.tagline }}</p><a href="https://github.com/{{ site.github.username }}">GitHub</a> · <a href="mailto:{{ site.social.email }}">Email</a></div>
 </div></aside>
-<aside class="sidebar sidebar-right"><div class="tools"><button type="button" class="theme-toggle" aria-label="색상 테마 전환">◐</button></div></aside>
+<button type="button" class="theme-toggle floating-theme-toggle" aria-label="색상 테마 전환">◐</button>
 <div id="post"><div class="inner-header" aria-hidden="true"><span class="dot" style="background:#f86158"></span><span class="dot" style="background:#fbbf2d"></span><span class="dot" style="background:#2acb45"></span></div><div class="inner-content"><main id="main-content" tabindex="-1">{{ content }}</main></div></div>
 <footer class="site-footer">© {{ 'now' | date: '%Y' }} {{ site.social.name }} · <a href="https://github.com/byanko55/jekyll-theme-satellite">Satellite</a></footer>
 </body></html>
