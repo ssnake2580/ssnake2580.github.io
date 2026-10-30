@@ -20,6 +20,15 @@ order: 4
 - **논문/컨퍼런스** — 연구와 발표에서 얻은 배움
 - **공모전/자격증** — 도전과 준비 과정
 
+### CTF 대회
+
+- **2025 IT Hackathon** — 우수상
+- **2026 Hack Theon Sejong** — 참가
+
+### 교육
+
+- **Skills2Work-Seoul** — 수료
+
 ### Contact
 
 - [GitHub · ssnake2580](https://github.com/ssnake2580)
