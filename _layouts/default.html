@@ -23,7 +23,6 @@
 <nav id="navigation" aria-label="주 메뉴"><ul class="nav-list">
 <li><div class="nav-item"><a class="nav-list-link nav-lh" href="{{ '/' | relative_url }}"><span>⌂ &nbsp; Home</span></a></div></li>
 {% for category in site.data.knights_categories %}<li><div class="nav-item"><a class="nav-list-link nav-lh" href="{{ '/notes/' | append: category.slug | append: '/' | relative_url }}"{% if page.category_name == category.name %} aria-current="page"{% endif %}><span><b aria-hidden="true">#</b> &nbsp; {{ category.name }}</span></a></div></li>{% endfor %}
-<li><div class="nav-item"><a class="nav-list-link nav-lh" href="{{ '/about/' | relative_url }}"><span>✦ &nbsp; 소개</span></a></div></li>
 <li><div class="nav-item"><a class="nav-list-link nav-lh" href="{{ '/archives/' | relative_url }}"><span>≡ &nbsp; 아카이브</span></a></div></li>
 <li><div class="nav-item"><a class="nav-list-link nav-lh" href="{{ '/tags/' | relative_url }}"><span>⌗ &nbsp; 태그</span></a></div></li>
 </ul></nav>
