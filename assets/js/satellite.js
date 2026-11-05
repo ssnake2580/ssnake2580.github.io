@@ -13,9 +13,4 @@
     menu.setAttribute('aria-expanded', String(open));
     menu.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
   });
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && matchMedia('(min-width: 1025px)').matches) {
-    const script = document.createElement('script');
-    script.src = new URL('satellite-background.js', document.currentScript.src).href;
-    document.body.appendChild(script);
-  }
 })();

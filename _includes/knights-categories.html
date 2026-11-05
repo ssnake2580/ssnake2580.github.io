@@ -1,5 +1,5 @@
 <div class="knights-grid">
 {% for category in site.data.knights_categories %}
 {% assign records = site.posts | where_exp: "post", "post.categories contains category.name" %}
-<a class="knights-category" href="{{ '/notes/' | append: category.slug | append: '/' | relative_url }}"><span class="knights-number">{{ category.number }} /</span><h3>{{ category.name }}</h3><p>{{ category.description }}</p><span class="knights-count">{{ records.size }}개의 기록 <span aria-hidden="true">↗</span></span></a>
+<a class="knights-category" href="{{ '/notes/' | append: category.slug | append: '/' | relative_url }}"><span class="category-icon" aria-hidden="true">{% case category.slug %}{% when 'development' %}&lt;/&gt;{% when 'ctf-wargame' %}⚑{% when 'bug-bounty' %}<svg class="bug-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m9 3 1 2m5-2-1 2M8 9V8a4 4 0 0 1 8 0v1M5 9h14M7 9v7a5 5 0 0 0 10 0V9M12 10v10M3 13h4m10 0h4M4 5l4 4m12-4-4 4M3 21l5-4m13 4-5-4"/></svg>{% when 'technical-writing' %}▤{% when 'research' %}⌘{% else %}♜{% endcase %}</span><h3>{{ category.name }}</h3><p>{{ category.description }}</p><span class="knights-count">{{ records.size }}개의 기록 <span aria-hidden="true">↗</span></span></a>
 {% endfor %}</div>

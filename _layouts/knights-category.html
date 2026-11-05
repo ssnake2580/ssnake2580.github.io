@@ -1,8 +1,6 @@
 ---
 layout: page
 ---
-<p class="knights-eyebrow">LEARNING JOURNAL / {{ page.label }}</p>
-<p>{{ page.description }}</p>
 {% assign records = site.posts | where_exp: "post", "post.categories contains page.category_name" %}
 {% include satellite-post-list.html records=records %}
 <p><a href="{{ '/categories/' | relative_url }}">← 전체 카테고리</a></p>
