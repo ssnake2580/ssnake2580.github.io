@@ -2,6 +2,6 @@
 layout: default
 title: 홈
 ---
-<section class="home-records"><h1>./Learning_Log</h1><div class="records-wrap">{% include satellite-post-list.html records=site.posts %}</div>
-<div class="journal-status"><h2>&gt; Journal Status</h2><a class="profile-terminal" href="{{ '/about/' | relative_url }}"><img src="{{ site.avatar | relative_url }}" alt="" width="64" height="64"><span><strong>ssnake</strong><small>블루팀에서, 레드팀으로.</small><small>학습 기록 {{ site.posts.size }}개 · 6개 카테고리</small></span><span aria-hidden="true">↗</span></a><span class="status-label"><i aria-hidden="true"></i> LEARNING_IN_PROGRESS</span></div></section>
+<section class="home-records"><h1>./Learning_Log</h1><div class="records-wrap">{% assign recent_posts = site.posts | sort: 'date' | reverse | slice: 0, 5 %}{% include satellite-post-list.html records=recent_posts %}</div>
+<div class="journal-status"><h2>&gt; Journal Status</h2><a class="profile-terminal" href="{{ '/about/' | relative_url }}"><img src="{{ '/assets/img/about-snake.png' | relative_url }}" alt="" width="64" height="64"><span><strong>ssnake</strong><small>블루팀에서, 레드팀으로.</small><small>학습 기록 {{ site.posts.size }}개 · 6개 카테고리</small></span><span aria-hidden="true">↗</span></a><span class="status-label"><i aria-hidden="true"></i> LEARNING_IN_PROGRESS</span></div></section>
 <section class="category-section"><h2>./Knowledge_Base</h2>{% include knights-categories.html %}</section>

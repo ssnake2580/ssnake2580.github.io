@@ -176,17 +176,28 @@ body .about-terminal .terminal-lights{justify-content:flex-start;gap:5px}
 body .achievement-card .achievement-symbol{display:flex;align-items:center;justify-content:center;flex:0 0 36px;width:40px;height:36px;font-size:32px;line-height:1;margin:0;align-self:center}
 body .achievement-card .achievement-symbol svg{display:block;flex:none;width:36px!important;height:36px!important;max-width:none;max-height:none;margin:0;padding:0}
 
-/* Journey scaffold: intentionally empty detail areas for future entries. */
-body .about-journey{margin-top:38px;margin-bottom:38px}
-body .about-journey h2{font-size:1.7rem;margin:0 0 8px;letter-spacing:0}
-body .about-journey h2::before{content:none}
-body .about-journey .journey-subtitle{margin:0 0 42px;font-size:.9rem}
-.journey-grid{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;padding-top:20px}
-.journey-grid::before{content:'';position:absolute;top:0;left:16.66%;right:16.66%;height:2px;background:linear-gradient(90deg,#20cee1 45%,#ff476c)}
-.journey-card{position:relative;border:1px solid var(--terminal-line);border-radius:9px;background:var(--terminal-panel);padding:20px;min-height:150px}
-.journey-card::before{content:'';position:absolute;top:-25px;left:calc(50% - 5px);width:10px;height:10px;border-radius:50%;background:var(--journey-color);box-shadow:0 0 12px var(--journey-color)}
-.journey-blue{--journey-color:#20cee1;border-color:#20cee170}.journey-transition{--journey-color:#20cee1}.journey-red{--journey-color:#ff476c;border-color:#ff476c70}
-body .journey-card h3{font:700 14px monospace;margin:0;color:var(--journey-color)}
-.journey-card h3 small{font:11px sans-serif;color:var(--terminal-muted)}
-.journey-content{min-height:78px}
-@media(max-width:700px){.journey-grid{grid-template-columns:1fr;padding-top:0;padding-left:22px;gap:16px}.journey-grid::before{top:0;bottom:0;left:4px;right:auto;width:2px;height:auto;background:linear-gradient(#20cee1 45%,#ff476c)}.journey-card::before{left:-24px;top:24px}body .about-journey .journey-subtitle{margin-bottom:24px}}
+body .about-facts .fact-icon{display:flex;align-items:center;height:28px;color:var(--terminal-accent)}
+body .about-facts .fact-svg{display:block;width:26px!important;height:26px!important;max-width:none;margin:0;padding:0}
+
+/* Outline-only profile icons, including shapes affected by theme SVG rules. */
+body .about-facts .fact-svg,body .about-facts .fact-svg *{fill:none!important;stroke:currentColor!important;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* Solid cyan activity icons, matching the profile accent color. */
+body .achievement-card .achievement-symbol{color:var(--terminal-accent)!important}
+body .achievement-card .achievement-symbol svg,body .achievement-card .achievement-symbol svg *{fill:currentColor!important;stroke:none!important}
+
+/* Keep large section headings in the original terminal cyan. */
+body main h1,body main h2,body.dark-theme main h1,body.dark-theme main h2{color:var(--terminal-accent)}
+body .about-bio h2,body.dark-theme .about-bio h2{color:var(--terminal-text)}
+
+body main .category-icon .writing-icon{display:block;width:40px!important;height:40px!important;margin:0;fill:none!important}
+body main .category-icon .writing-icon *{fill:none!important;stroke:currentColor!important}
+
+body .about-avatar{border:0;background:none;box-shadow:none}
+body .about-avatar img{padding:0;border-radius:14px;object-fit:cover}
+
+/* Align the profile picture with About_Me and fill the profile row. */
+@media(min-width:1101px){body .about-profile{grid-template-columns:280px minmax(0,1fr) 320px;align-items:stretch}body .about-profile .about-avatar{align-self:start;width:100%;height:280px;aspect-ratio:1;margin:0}body .about-profile .about-avatar img{display:block;width:100%;height:100%;margin:0}}
+@media(min-width:701px) and (max-width:1100px){body .about-profile{grid-template-columns:250px minmax(0,1fr);align-items:start}body .about-profile .about-avatar{width:250px;height:250px;margin:0}}
+
+body .profile-terminal img{border:0;border-radius:10px;object-fit:cover}

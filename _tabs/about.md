@@ -7,7 +7,7 @@ order: 4
 ---
 <div class="about-dashboard">
 <section class="about-profile" aria-labelledby="about-heading">
-  <div class="about-avatar"><img src="{{ site.avatar | relative_url }}" alt="ssnake 로고" width="220" height="220"><span aria-hidden="true">&gt;_</span></div>
+  <div class="about-avatar"><img src="{{ '/assets/img/about-snake.png' | relative_url }}" alt="후드를 쓰고 노트북 앞에서 잠든 뱀 캐릭터" width="220" height="220"></div>
   <div class="about-bio">
     <h1 id="about-heading">./About_Me</h1>
     <h2>안녕하세요, <em>ssnake</em>입니다.</h2>
@@ -24,19 +24,10 @@ order: 4
   </div>
 </section>
 <section class="about-facts" aria-label="프로필 정보">
-  <article><span class="fact-icon" aria-hidden="true">⌘</span><h3>Name</h3><p>ssnake</p></article>
-  <article><span class="fact-icon" aria-hidden="true">⌕</span><h3>Interests</h3><p>디지털 포렌식 · 웹 보안</p></article>
-  <article><span class="fact-icon" aria-hidden="true">◎</span><h3>Focus</h3><p><span class="blue-label">Blue Team</span> <span aria-hidden="true">→</span> <span class="red-label">Red Team</span></p></article>
+  <article><span class="fact-icon" aria-hidden="true"><svg class="fact-svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M4 21v-3a8 8 0 0 1 16 0v3"/></svg></span><h3>Name</h3><p>ssnake</p></article>
+  <article><span class="fact-icon" aria-hidden="true"><svg class="fact-svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg></span><h3>Interests</h3><p>디지털 포렌식 · 웹 보안</p></article>
+  <article><span class="fact-icon" aria-hidden="true"><svg class="fact-svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.3 10a9 9 0 1 1-6.3-6.3"/><path d="M16.7 10.3a5 5 0 1 1-3-3"/><circle cx="11.5" cy="12.5" r="1"/><path d="m12 12 7-7m0 0V2m0 3h3"/></svg></span><h3>Focus</h3><p><span class="blue-label">Blue Team</span> <span aria-hidden="true">→</span> <span class="red-label">Red Team</span></p></article>
   <article><span class="fact-icon" aria-hidden="true">✉</span><h3>Contact</h3><p><a href="mailto:kimmc1205@gmail.com">kimmc1205@gmail.com</a></p><a class="fact-link" href="https://github.com/ssnake2580">GitHub ↗</a></article>
-</section>
-<section class="about-journey" aria-labelledby="journey-title">
-  <h2 id="journey-title">./Journey</h2>
-  <p class="journey-subtitle">From <span class="blue-label">Blue Team</span> to <span class="red-label">Red Team</span></p>
-  <div class="journey-grid">
-    <article class="journey-card journey-blue"><h3><span aria-hidden="true">♧</span> Blue Team <small>(현재)</small></h3><div class="journey-content"></div></article>
-    <article class="journey-card journey-transition"><h3><span aria-hidden="true">⚗</span> Transition <small>(진행 중)</small></h3><div class="journey-content"></div></article>
-    <article class="journey-card journey-red"><h3><span aria-hidden="true">⚔</span> Red Team <small>(목표)</small></h3><div class="journey-content"></div></article>
-  </div>
 </section>
 <section class="about-achievements" aria-labelledby="ctf-title">
   <h2 id="ctf-title">./CTF_Competitions</h2>
