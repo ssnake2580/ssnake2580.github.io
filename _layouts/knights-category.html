@@ -2,5 +2,5 @@
 layout: page
 ---
 {% assign records = site.posts | where_exp: "post", "post.categories contains page.category_name" %}
-{% include satellite-post-list.html records=records %}
+<div class="category-records">{% include satellite-post-list.html records=records %}</div>
 <p><a href="{{ '/categories/' | relative_url }}">← 전체 카테고리</a></p>

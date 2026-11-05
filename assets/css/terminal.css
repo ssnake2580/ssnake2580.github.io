@@ -201,3 +201,13 @@ body .about-avatar img{padding:0;border-radius:14px;object-fit:cover}
 @media(min-width:701px) and (max-width:1100px){body .about-profile{grid-template-columns:250px minmax(0,1fr);align-items:start}body .about-profile .about-avatar{width:250px;height:250px;margin:0}}
 
 body .profile-terminal img{border:0;border-radius:10px;object-fit:cover}
+
+/* Full-width post rows in all six category pages. */
+body .category-records .entry-list{display:grid;grid-template-columns:minmax(0,1fr);width:100%;padding:0;list-style:none}
+body .category-records .entry-list li{width:100%;min-width:0;min-height:0;margin:0}
+body .category-records .entry-list li>a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 24px;padding:28px 36px}
+body .category-records .entry-list h3{grid-column:1;margin:0;font-size:1.3rem}
+body .category-records .entry-list p{grid-column:1;grid-row:2;margin:0;overflow-wrap:anywhere}
+body .category-records .entry-list time{grid-column:2;grid-row:1;text-align:right;align-self:center;white-space:nowrap}
+body .category-records .entry-list .entry-category{grid-column:2;grid-row:2;text-align:right;margin:0;align-self:center}
+@media(max-width:560px){body .category-records .entry-list li>a{padding:22px;grid-template-columns:minmax(0,1fr);gap:10px}body .category-records .entry-list time,body .category-records .entry-list .entry-category{grid-column:1;grid-row:auto;text-align:left}}
