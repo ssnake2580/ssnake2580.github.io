@@ -41,7 +41,7 @@ main .knights-category .knights-count {
 }
 main .knights-category .knights-number { font-size: .7rem; }
 
-/* Smaller sidebar labels and matching icon backgrounds. */
+/* Compact sidebar labels with full-width pill backgrounds. */
 #navigation .nav-list li { font-size: .875rem; }
 #navigation .nav-item { padding: .35rem 0; }
 #navigation .nav-list-link {
@@ -49,9 +49,20 @@ main .knights-category .knights-number { font-size: .7rem; }
   padding: .35rem .6rem;
   line-height: 1.6;
 }
+#navigation .nav-lh {
+  position: relative;
+  border-radius: 999px;
+}
 #navigation .nav-lh::before {
-  width: 2rem;
-  height: 2rem;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+#navigation .nav-lh:hover {
+  transform: none;
 }
 #navigation .nav-lh:hover::before { width: 100%; }
 
