@@ -292,3 +292,27 @@ body main .category-section {
     margin: 0 auto;
   }
 }
+
+/* Place the About terminal below the profile in the centered column. */
+@media (min-width: 701px) {
+  body .about-profile {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    align-items: start;
+  }
+  body .about-profile .about-avatar {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0;
+  }
+  body .about-profile .about-terminal {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+  }
+  body .about-profile .about-bio {
+    min-width: 0;
+    width: 100%;
+  }
+}
