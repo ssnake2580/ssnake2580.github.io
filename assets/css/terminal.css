@@ -83,7 +83,7 @@ body .profile-terminal img{width:64px;height:64px;margin:0;border-radius:50%;bor
 .profile-terminal span:nth-child(2){flex:1}.profile-terminal small{display:block;color:var(--terminal-muted);font-size:12px;margin-top:4px}
 .status-label{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid #173947;border-radius:4px;color:#2596a7;font:12px monospace;letter-spacing:1px}
 .status-label i{width:10px;height:10px;border-radius:50%;background:var(--terminal-accent);box-shadow:0 0 12px #20cee180}
-body main .category-section{margin:0;background:#000;padding:90px max(24px,calc((100vw - 1280px)/2)) 110px}
+body main .category-section{margin:0;background:transparent;padding:90px max(24px,calc((100vw - 1280px)/2)) 110px}
 body .knights-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
 body main .knights-category,body.dark-theme main .knights-category{min-height:220px;text-align:center;align-items:center;padding:30px 24px;background:#111827;border-color:#222d3d;border-radius:10px}
 body main .category-icon{font:700 40px/1.3 monospace;color:#748195}
@@ -95,7 +95,7 @@ body .page-heading .eyebrow{display:none}
 body main>h2:not([id=hero-title]){margin-top:2rem}
 body .site-footer{margin:0;padding:24px;background:#080d15;border-top:1px solid #1c293b;font-family:monospace}
 body:not(.dark-theme) .entry-list li,body:not(.dark-theme) main .knights-category{background:var(--terminal-panel)}
-body:not(.dark-theme) main .category-section{background:#dce8f1}
+body:not(.dark-theme) main .category-section{background:transparent}
 body:not(.dark-theme) main .knights-category h3{color:var(--terminal-text)}
 @media(max-width:900px){body .entry-list,body .knights-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}body .home-records{padding-top:40px}body .home-records>h1,body .category-section>h2{margin-bottom:40px}}
 @media(max-width:560px){.terminal-header{padding:18px 16px;flex-wrap:wrap}.terminal-controls{gap:6px}.terminal-controls a,.terminal-controls button{padding:6px 9px;min-height:36px}.terminal-brand{letter-spacing:0!important;padding:10px 14px!important}body #navigation{top:100%;right:16px;left:16px;max-width:none}body .entry-list,body .knights-grid{grid-template-columns:1fr}body main{padding:24px 20px 60px}body .home-records{padding:35px 20px 65px}body main .category-section{padding:55px 20px 65px}body .journal-status{padding-top:60px}body .entry-list li>a{padding:24px}}
@@ -220,3 +220,75 @@ body main .category-records>ul.entry-list>li:not(:has(a)){display:flex;align-ite
 
 /* Academic watermark for education cards. */
 body .about-achievements[aria-labelledby="education-title"] .achievement-card::after{content:'';width:128px;height:105px;right:14px;top:16px;background:var(--terminal-accent);opacity:.07;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5C9 3 5 3 2 4v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1Zm0 0v15M5 8h4M5 12h4M15 8h4M15 12h4'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+
+/* Center the homepage in half of the desktop viewport. */
+@media (min-width: 1025px) {
+  body:has(.home-records) .terminal-header {
+    width: 50%;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  body:has(.home-records) .site-footer {
+    width: 50%;
+    margin: 0 auto;
+  }
+  body:has(.home-records) main {
+    width: 50%;
+    margin: 0 auto;
+  }
+  body .home-records {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  body:has(.home-records) main .category-section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  body:has(.home-records) .knights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  body .home-records .entry-list li > a {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  body .home-records .entry-list time,
+  body .home-records .entry-list .entry-category {
+    grid-column: 1;
+    grid-row: auto;
+    text-align: left;
+  }
+}
+
+/* Bring the category section closer to the journal status. */
+body .home-records {
+  padding-bottom: 24px;
+}
+body main .category-section {
+  padding-top: 24px;
+}
+
+/* Use the same centered desktop column across every page. */
+@media (min-width: 1025px) {
+  body .terminal-header,
+  body.article-page .terminal-header {
+    width: 50%;
+    max-width: none;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  body main,
+  body:has(.home-records) main,
+  body:has(.about-dashboard) main {
+    width: 50%;
+    max-width: none;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  body .site-footer {
+    width: 50%;
+    margin: 0 auto;
+  }
+}

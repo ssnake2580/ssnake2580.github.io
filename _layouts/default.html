@@ -8,9 +8,10 @@
 <link rel="stylesheet" href="{{ '/assets/css/satellite.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/satellite-custom.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 <link rel="stylesheet" href="{{ '/assets/css/terminal.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+{% if page.layout == 'post' %}<link rel="stylesheet" href="{{ '/assets/css/article.css' | relative_url }}?v={{ site.time | date: '%s' }}">{% endif %}
 <script defer src="{{ '/assets/js/satellite.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 </head>
-<body>
+<body{% if page.layout == 'post' %} class="article-page"{% endif %}>
 <script>try { if ((localStorage.getItem('satellite-theme') || '{{ site.theme_mode }}') === 'dark') document.body.classList.add('dark-theme'); } catch (e) { document.body.classList.add('dark-theme'); }</script>
 <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
 <header class="terminal-header">

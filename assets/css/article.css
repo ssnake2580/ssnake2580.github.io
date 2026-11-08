@@ -1,0 +1,65 @@
+/* Center the reading column for every post, retaining the site theme. */
+body.article-page main {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 80px 32px 100px;
+}
+body.article-page .post-body {
+  width: 100%;
+  text-align: left;
+}
+body.article-page .post-body p {
+  text-align: left;
+}
+body.article-page .post-category-list {
+  display: inline-block;
+  margin: 0 0 64px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid currentColor;
+  font-size: 1rem;
+  font-weight: 700;
+}
+body.article-page .page-heading {
+  text-align: left;
+}
+body.article-page .post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin: 0 0 24px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+body.article-page .post-meta > * {
+  margin: 0;
+  font-size: inherit;
+}
+body.article-page .post-meta time {
+  color: var(--terminal-text);
+}
+body.article-page .post-meta-divider {
+  color: var(--terminal-line);
+}
+body.article-page .page-heading h1 {
+  margin-top: 0;
+}
+@media (max-width: 600px) {
+  body.article-page .post-category-list {
+    margin-bottom: 40px;
+  }
+  body.article-page main {
+    padding: 40px 20px 60px;
+  }
+}
+
+@media (min-width: 1025px) {
+  body.article-page main {
+    width: 50%;
+    max-width: none;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

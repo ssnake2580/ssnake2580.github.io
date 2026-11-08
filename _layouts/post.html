@@ -1,4 +1,16 @@
 ---
 layout: default
 ---
-<article><header class="page-heading"><p class="eyebrow">{{ page.categories | join: ' / ' | escape }}</p><h1>{{ page.title | escape }}</h1><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time></header><div class="post-body">{{ content }}</div><div class="tag-box">{% for tag in page.tags %}<a class="tag" href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag | escape }}</a>{% endfor %}</div><p><a href="{{ '/archives/' | relative_url }}">← 전체 기록</a></p></article>
+{% assign post_category = page.categories | first %}
+{% assign category_info = site.data.knights_categories | where: "name", post_category | first %}
+{% if category_info %}
+  {% assign list_url = '/notes/' | append: category_info.slug | append: '/' %}
+{% else %}
+  {% assign list_url = '/archives/' %}
+{% endif %}
+<article>
+<a class="post-category-list" href="{{ list_url | relative_url }}">{% if post_category %}{{ post_category | escape }} 목록{% else %}전체 기록{% endif %}</a>
+<header class="page-heading">
+  <div class="post-meta">{% if post_category %}<a href="{{ list_url | relative_url }}">{{ post_category | escape }}</a><span class="post-meta-divider" aria-hidden="true">/</span>{% endif %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time></div>
+  <h1>{{ page.title | escape }}</h1>
+</header><div class="post-body">{{ content }}</div><div class="tag-box">{% for tag in page.tags %}<a class="tag" href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag | escape }}</a>{% endfor %}</div><p><a href="{{ '/archives/' | relative_url }}">← 전체 기록</a></p></article>
